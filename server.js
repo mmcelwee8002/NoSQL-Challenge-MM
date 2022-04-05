@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const mongoose = require('mongoose');
 
 
-// const { modelName } = require('./models/Pizza');
+const { modelName } = require('./models/User');
 
 
 app.use(express.json());
