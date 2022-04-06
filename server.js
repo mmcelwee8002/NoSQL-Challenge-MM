@@ -1,11 +1,12 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const mongoose = require('mongoose');
 
 
-const { modelName } = require('./models/User');
+
+
 
 
 app.use(express.json());
@@ -17,7 +18,7 @@ app.use(require('./routes'));
 
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pizza-hunt', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/NoSQL-Challenge-MM', {
     // useFindAndModify: false,
     useNewUrlParser: true,
     // useUnifiedTopoloyg: true
