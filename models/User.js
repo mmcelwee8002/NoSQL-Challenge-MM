@@ -19,7 +19,8 @@ const UserSchema = new Schema(
         },
         thoughts:{
             type: Schema.Types.ObjectId,
-            ref: 'Thought'
+            ref: 'Thought',
+            required: false
         },
         friends:{
             type: Schema.Types.ObjectId,
@@ -31,7 +32,8 @@ const UserSchema = new Schema(
         toJSON: {
             virtuals: true,
             getters: true
-        }
+        },
+        id: false
     }
 )
 
@@ -39,8 +41,8 @@ const UserSchema = new Schema(
 const User = model('User', UserSchema);
 
 // get total count of comments and replies on retrieval
-UserSchema.virtual('friendCount').get(function () {
-    return this.friends.length;
-});
+// UserSchema.virtual('friendCount').get(function () {
+//     return this.friends.length;
+// });
 
 module.exports = User;
