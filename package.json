@@ -19,6 +19,6 @@
   "homepage": "https://github.com/mmcelwee8002/NoSQL-Challenge-MM#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^6.2.9"
+    "mongoose": "^6.2.10"
   }
 }

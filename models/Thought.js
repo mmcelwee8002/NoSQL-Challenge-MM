@@ -9,18 +9,22 @@ const ThoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: 'Please enter your thoughts',
+            trim: true,
             minlength: 1,
             maxlength: 280
+        },
+        username: {
+            type: String,
+            required: 'username required to post'
+
+
         },
         createdAt: {
             type: Date,
             default: Date.now,
             get: (createdAtVal) => dateFormat(createdAtVal)
         },
-        username: {
-            type: String,
-            required: 'username required to post'
-        },
+       
         reactions: [ReactionSchema],
     },
     {
