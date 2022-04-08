@@ -43,8 +43,8 @@ const thoughtController = {
             .catch(err => res.json(err));
     },
     // update thought by id
-    updateThought({ body }, res) {
-        Thought.findOneAndUpdate({ _id: body.thoughtId }, body, { new: true, runValidators: true })
+    updateThought({ params, body }, res) {
+        Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
             
         .then(dbThoughtData => {
                 if (!dbThoughtData) {
@@ -56,7 +56,7 @@ const thoughtController = {
             })
             .catch(err => res.status(400).json(err));
     },
-    
+
     //delete Thought
     deleteThought({ params, body }, res) {
         Thought.findOneAndDelete({ _id: params.thoughtId })
