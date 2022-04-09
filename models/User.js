@@ -18,12 +18,12 @@ const UserSchema = new Schema(
             match: [/.+@.+\..+/]
         },
         thoughts:{
-            type: Schema.Types.ObjectId,
+            type: Schema.Types.Array,
             ref: 'Thought',
             required: false
         },
         friends:{
-            type: Schema.Types.ObjectId,
+            type: Schema.Types.Array,
             ref: 'User',
             required: false
         }
