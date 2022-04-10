@@ -24,9 +24,13 @@ router
     .put(updateThought)
 
 router
-    .route('/:thoughtId/reactions')
+    .route('/:thoughtId/reactions/:reactionId')
     .post(addReaction)
     .put(removeReaction)
 
+router
+    .route('/:thoughtId/reactions/')
+    .post(addReaction)
+    
 
 module.exports = router;
